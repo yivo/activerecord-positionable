@@ -5,11 +5,11 @@ module Essay
     end
 
     serialize do
-      { positionable: positionable? }
+      { is_positionable: positionable? }
     end
   end
 
-  class AttributeRoles
+  class AttributeFeatures
     def position?
       list = model_class.attributes_marked_as_position
       !!list && list.include?(attribute_name)
