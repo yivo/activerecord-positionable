@@ -11,8 +11,7 @@ module Essay
 
   class AttributeFeatures
     def position?
-      list = model_class.attributes_marked_as_position
-      !!list && list.include?(attribute_name)
+      model_class.attributes_marked_as_position.include?(attribute_name)
     end
 
     serialize do
