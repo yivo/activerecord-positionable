@@ -1,5 +1,6 @@
 require 'active_support/all'
 require 'active_record'
+require 'activerecord-traits'
 
 require 'activerecord-positionable/extension'
 require 'activerecord-positionable/migration'
