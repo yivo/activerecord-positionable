@@ -31,7 +31,8 @@ module Positionable
 
           class_eval <<-BODY, __FILE__, __LINE__ + 1
             def #{attr_name}_missing?
-              self[:#{attr_name}].blank?
+              pos = self[:#{attr_name}]
+              pos.zero? || pos.blank?
             end
 
             def assign_#{attr_name}!
