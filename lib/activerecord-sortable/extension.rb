@@ -11,7 +11,7 @@ module Sortable
       def acts_as_sortable(options = {})
         position = Sortable.default_column
 
-        scope :sorted, -> { order(position => :desc).order(id: :desc) }
+        scope :sorted, -> { order(position => :desc) }
 
         class << self
           alias latest sorted
