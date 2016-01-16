@@ -1,17 +1,17 @@
 module Essay
   class ModelFeatures
-    def positionable?
-      model_class.positionable_options.any?
+    def sortable?
+      !!model_class.try(:sortable_options)
     end
 
     serialize do
-      { is_positionable: positionable? }
+      { is_sortable: sortable? }
     end
   end
 
   class AttributeFeatures
     def position?
-      model_class.attributes_marked_as_position.include?(attribute_name)
+      model_features.sortable? && attribute_name == :position
     end
 
     serialize do

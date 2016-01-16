@@ -1,13 +1,13 @@
 ```ruby
   class Article < ActiveRecord::Base
-    positionable
+    acts_as_sortable
   end
 
-  Article.features.positionable?                # => true
-  Article.attribute_roles[:position].position?  # => true
+  Article.features.sortable?                   # => true
+  Article.attribute_roles[:position].position? # => true
 ```
 
 ## Gemfile
 ```ruby
-gem 'activerecord-positionable', github: 'yivo/activerecord-positionable'
+gem 'activerecord-sortable', github: 'yivo/activerecord-sortable'
 ```

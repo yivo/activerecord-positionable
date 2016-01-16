@@ -1,13 +1,13 @@
 # encoding: utf-8
 
 Gem::Specification.new do |s|
-  s.name            = 'activerecord-positionable'
+  s.name            = 'activerecord-sortable'
   s.version         = '1.0.0'
   s.authors         = ['Yaroslav Konoplov']
   s.email           = ['yaroslav@inbox.com']
-  s.summary         = 'ActiveRecord positionable extension'
-  s.description     = 'ActiveRecord positionable extension'
-  s.homepage        = 'http://github.com/yivo/activerecord-positionable'
+  s.summary         = 'ActiveRecord sortable'
+  s.description     = 'ActiveRecord sortable'
+  s.homepage        = 'http://github.com/yivo/activerecord-sortable'
   s.license         = 'MIT'
 
   s.executables     = `git ls-files -z -- bin/*`.split("\x0").map{ |f| File.basename(f) }
