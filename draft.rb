@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Using sortable with has_and_belongs_to_many
 #
 # articles_tags

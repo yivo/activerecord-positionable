@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Sortable
   module ColumnTypes
     # http://dba.stackexchange.com/questions/11031/order-by-column-should-have-index-or-not
