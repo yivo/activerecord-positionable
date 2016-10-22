@@ -1,7 +1,11 @@
+# encoding: utf-8
 # frozen_string_literal: true
+
 module Sortable
   module Extension
     extend ActiveSupport::Concern
+
+    included { class_attribute :sortable }
 
     module ClassMethods
       #
@@ -9,29 +13,17 @@ module Sortable
       #   acts_as_sortable
       # end
       #
-      def acts_as_sortable(options = {})
-        position = Sortable.default_column
+      def acts_as_sortable
+        scope :sorted, -> { order(position: :desc) }
+        scope :latest, -> { sorted }
 
-        scope :sorted, -> { order(position => :desc) }
-
-        class << self
-          alias latest sorted
+        after_save do
+          update_column(:position, id) if position.blank?
+          nil
         end
 
-        after_save :"assign_#{position}!", unless: :"#{position}?"
-
-        class_eval <<-BODY, __FILE__, __LINE__ + 1
-          def assign_#{position}!
-            self.#{position} = id
-            save!
-          end
-        BODY
-
-        unless respond_to?(:sortable_options)
-          class_attribute :sortable_options, instance_accessor: false, instance_predicate: false
-        end
-
-        self.sortable_options = options
+        self.sortable = true
+        nil
       end
     end
   end

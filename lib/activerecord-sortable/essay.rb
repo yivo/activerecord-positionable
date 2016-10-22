@@ -1,8 +1,10 @@
+# encoding: utf-8
 # frozen_string_literal: true
+
 module Essay
   class ModelFeatures
     def sortable?
-      !!model_class.try(:sortable_options)
+      !!model_class.sortable?
     end
 
     serialize do
