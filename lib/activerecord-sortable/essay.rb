@@ -4,7 +4,7 @@
 module Essay
   class ModelFeatures
     def sortable?
-      !!model_class.sortable?
+      !!active_record.sortable?
     end
 
     serialize do
@@ -14,7 +14,7 @@ module Essay
 
   class AttributeFeatures
     def position?
-      model_features.sortable? && attribute_name == :position
+      active_record_features.sortable? && attribute.name == :position
     end
 
     serialize do
