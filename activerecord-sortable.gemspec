@@ -3,7 +3,7 @@
 
 Gem::Specification.new do |s|
   s.name            = 'activerecord-sortable'
-  s.version         = '1.0.2'
+  s.version         = '1.0.3'
   s.authors         = ['Yaroslav Konoplov']
   s.email           = ['eahome00@gmail.com']
   s.summary         = 'ActiveRecord sortable'
@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'activesupport',       '>= 3.0', '< 6.0'
   s.add_dependency 'activerecord',        '>= 3.0', '< 6.0'
-  s.add_dependency 'activerecord-traits', '~> 1.0'
+  s.add_dependency 'activerecord-traits', '~> 1.1'
 end
