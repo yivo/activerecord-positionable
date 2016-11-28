@@ -3,7 +3,7 @@
 
 Gem::Specification.new do |s|
   s.name            = 'activerecord-sortable'
-  s.version         = '1.0.3'
+  s.version         = '1.0.4'
   s.authors         = ['Yaroslav Konoplov']
   s.email           = ['eahome00@gmail.com']
   s.summary         = 'ActiveRecord sortable'

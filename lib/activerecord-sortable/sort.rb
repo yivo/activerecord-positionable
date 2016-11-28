@@ -36,7 +36,7 @@ module Sortable
         query.update_all("#{attr_sql} = #{attr_sql} - 1")
       end
 
-      if changed
+      if changed && traits.attributes[:updated_at]
         now = active_record.default_timezone == :utc ? Time.now.utc : Time.now
         query.update_all(updated_at: now)
       end
